@@ -1,0 +1,31 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Q4
+{
+	class Program
+	{
+		static void Main(string[] args)
+		{
+			Console.Write("Enter a number between 1-15: ");
+			int pyrHight = Convert.ToInt32(Console.ReadLine());
+			int starValue = 1;
+			for (int counter = 1; counter <= pyrHight; counter++)
+			{
+				for (int spaceCounter = 1; spaceCounter <= (pyrHight - counter); spaceCounter++)
+				{
+					Console.Write(" ");
+				}
+				for (int internalStar = 1; internalStar <= starValue; internalStar++)
+				{
+					Console.Write("*");
+				}
+				Console.WriteLine();
+				starValue = starValue + 2;
+			}
+		}
+	}
+}
