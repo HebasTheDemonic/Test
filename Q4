@@ -13,18 +13,21 @@ namespace Q4
 			Console.Write("Enter a number between 1-15: ");
 			int pyrHight = Convert.ToInt32(Console.ReadLine());
 			int starValue = 1;
-			for (int counter = 1; counter <= pyrHight; counter++)
+			if (pyrHight > 0 && pyrHight < 16)
 			{
-				for (int spaceCounter = 1; spaceCounter <= (pyrHight - counter); spaceCounter++)
+				for (int counter = 1; counter <= pyrHight; counter++)
 				{
-					Console.Write(" ");
+					for (int spaceCounter = 1; spaceCounter <= (pyrHight - counter); spaceCounter++)
+					{
+						Console.Write(" ");
+					}
+					for (int internalStar = 1; internalStar <= starValue; internalStar++)
+					{
+						Console.Write("*");
+					}
+					Console.WriteLine();
+					starValue = starValue + 2;
 				}
-				for (int internalStar = 1; internalStar <= starValue; internalStar++)
-				{
-					Console.Write("*");
-				}
-				Console.WriteLine();
-				starValue = starValue + 2;
 			}
 		}
 	}
