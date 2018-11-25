@@ -1,0 +1,61 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Q1_2
+{
+	class Program
+	{
+		static void Main(string[] args)
+		{
+			Console.Write("Input the first number: ");
+			int numberOne = Convert.ToInt32(Console.ReadLine());
+			Console.Write("Input the second number: ");
+			int numberTwo = Convert.ToInt32(Console.ReadLine());
+			Console.Write("Input the third number: ");
+			int numberThree = Convert.ToInt32(Console.ReadLine());
+			int sum;
+			if (IsPrime(numberOne))
+			{
+				if (IsPrime(numberTwo))
+				{
+					if (IsPrime(numberThree))
+					{
+						sum = numberOne + numberTwo + numberThree;
+						Console.WriteLine("The sum of these prime numbers is: {0}",sum);
+					}
+					else
+					{
+						Console.WriteLine("Not primary Numbers");
+					}
+				}
+				else
+				{
+					Console.WriteLine("Not primary Numbers");
+				}
+			}
+			else
+			{
+				Console.WriteLine("Not primary Numbers");
+			}
+		}
+		static bool IsPrime (int number)
+		{
+			int divider = 2;
+			while (number % divider != 0 && divider < number)
+			{
+				divider++;
+			}
+			if (number == divider)
+			{
+				return true;
+			}
+			else
+			{
+				return false;
+			}
+		}
+	}
+}
