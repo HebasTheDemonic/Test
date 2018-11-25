@@ -1,0 +1,43 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Q2
+{
+	class Program
+	{
+		static void Main(string[] args)
+		{
+			Console.Write("Input the total time in seconds: ");
+			int secondsTotal = Convert.ToInt32(Console.ReadLine());
+			int days, hours, minuets;
+			if (secondsTotal >= 0)
+			{
+
+				days = lowerSeconds(secondsTotal, 86400);
+				secondsTotal = secondsTotal - (days * 86400);
+				hours = lowerSeconds(secondsTotal, 3600);
+				secondsTotal = secondsTotal - (hours * 3600);
+				minuets = lowerSeconds(secondsTotal, 60);
+				secondsTotal = secondsTotal - (minuets * 60);
+				Console.WriteLine("The input seconds are equal to: {0} day(s), {1} hour(s), {2} minuet(s), {3} second(s)",days,hours,minuets,secondsTotal);
+			}
+			else
+			{
+				Console.WriteLine("Error!! time can not be negative.");
+			}
+		}
+		static int lowerSeconds (int total,int decrease)
+		{
+			int counter = 0;
+			while (total >= decrease)
+			{
+				total = total - decrease;
+				counter++;
+			}
+			return counter;
+		}
+	}
+}
